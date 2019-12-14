@@ -11,7 +11,7 @@ type MyPassThroughFormatter struct {
 }
 
 func (formatter MyPassThroughFormatter) Modify(msg shared.Message) shared.Message {
-	fmt.Printf("eavesdropping: %s\n", msg)
+	fmt.Printf("Lauschangriff --> \"%s\" sagt \"%s\"\n", msg.Sender, msg.Text)
 
 	// censoring
 	msg.Text = strings.ReplaceAll(msg.Text, "scheisse", "s******e")
